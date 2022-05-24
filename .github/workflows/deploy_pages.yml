@@ -3,8 +3,8 @@ on:
   push:
     branches:
       - main
-permissions: 
-  contents: write
+# permissions: 
+#   contents: write
 jobs:
   deploy:
     name: Deploy
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v3
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        uses: crazy-max/ghaction-github-pages@v2
         with:
           branch: main
           folder: basic-opl
