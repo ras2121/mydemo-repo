@@ -18,7 +18,7 @@ jobs:
           token: ${{ secrets.SECRET_TOKEN }}
           branch: devops
           branch-suffix: random
-          base: main
+          # base: main
           commit-message: Update workflow
           committer: Anup <anupsalunke@hotmail.co.in>
           title: '[Example] Update workflow'
