@@ -1,19 +1,23 @@
-# name: Deploy to GitHub Pages
-# on:
-#   push:
-#     branches:
-#       - main
-# # permissions: 
-# #   contents: write
-# jobs:
-#   deploy:
-#     name: Deploy
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout main
-#         uses: actions/checkout@v3
-#       - name: Deploy to GitHub Pages
-#         uses: crazy-max/ghaction-github-pages@v2
-#         with:
-#           branch: main
-#           folder: basic-opl
+name: Upload Artifacts - iOS
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    name: Deploy website
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: pages
+          path: docs
+          retention-days: 3
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          branch: main
+          folder: docs
