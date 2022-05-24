@@ -1,0 +1,19 @@
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches:
+      - main
+permissions: 
+  contents: write
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v3
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: main
+          folder: basic-opl
