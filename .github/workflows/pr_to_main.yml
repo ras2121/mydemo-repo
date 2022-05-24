@@ -2,7 +2,7 @@ name: Raise PR to main
 on:
   push:
     branches:
-      - feature-deploy
+      - devops
 jobs:
   action:
     name: Action
